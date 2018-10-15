@@ -1,0 +1,24 @@
+CREATE DATABASE P6;
+USE P6
+
+CREATE TABLE P6.Cliente(
+idCliente INT NOT NULL,
+nombre_cliente varchar(45),
+apellidos_cliente varchar(45),
+direccion_cliente varchar(45),
+Primary Key (idCliente));
+
+CREATE TABLE P6.Cuenta(
+idCuenta INT NOT NULL,
+user varchar(45) NOT NULL,
+pass varchar(45) NOT NULL,
+fecha_alta DATETIME,
+fecha_baja DATETIME,
+idCliente INT NOT NULL,
+Perfil_idPerfil INT NOT NULL,
+Primary Key (idCuenta),
+CONSTRAINT FK_CuentaCliente FOREING KEY(idCliente)
+REFERENCES Cliente (idCliente));
+
+CREATE TABLE P6.Perfil(
+idPerfil INT NOT NULL,
