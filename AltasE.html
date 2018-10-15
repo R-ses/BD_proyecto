@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<Style>
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #f1f1f1;
+  color: black;
+}
+
+.navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.main {
+  padding: 16px;
+  margin-bottom: 30px;
+}
+
+
+	input[type=text], input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	color:black
+	}
+	.jumbotron {
+		background-color:white !important;
+	}
+
+	.imgcontainer{
+		text-align: center;
+		margin: 24px 0 12px 0;
+	}
+
+	button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+	}
+
+	.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+	
+</Style>
+<head>
+	<title>Alta Estados</title>
+	<link href="./plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./plugins/anime-master/documentation/assets/css/anime.css" rel="stylesheet">
+	<link href="./plugins/anime-master/documentation/assets/css/anime-theme.css" rel="stylesheet">
+	<link href="./plugins/anime-master/documentation/assets/css/documentation.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="jumbotron text-center">
+		<h1 Style="color:black">[Mexico - Estados]</h1>
+
+	  	<div class="imgcontainer">
+			<img src="mex.jpg" style="width:10%">
+		</div>
+	</div>
+
+<!--
+	<form action="login.php" method="post">
+		<div align="center">
+			<input type="text" placeholder = "Nombre de usuario" name = "usr">
+			<br>
+			<br>
+			<input type="password" placeholder = "Clave de Acceso" name = "psw">
+			<br>
+			<br>
+			<button type="submit" value = "submit" style="height" >Ingresar
+		</div>
+	</form>
+-->
+
+	<div class="navbar">
+		<a href="index.html" >Inicio</a>
+		<a href="AltasE.html"class="active">Estados</a>
+		<a href="AltasM.html">Municipios</a>
+		<a href="#">Link 3</a>
+		<a href="#">Link 4</a>
+	</div>
+
+	<form action="regES.php" method="post">
+		<div align="center">
+			<input type="text" placeholder="ID Estado" name="id_estado">
+			<br>
+			<br>
+			<br>
+			<input type="text" placeholder="Nombre Estado" name="nm_estado">
+			<br>
+			<br>
+			<br>
+			<button type="submit" value = "submit" style"height "> Registrar
+		</div>
+	</form>
+	
+	
+	
+	
+	
+    <Script src="./plugins/jquery/jquery-3.2.1.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+	<Script src="./plugins/bootstrap/js/bootstrap.min.js"></script>
+	<Script src="./js/Funciones.js"></script>
+	<script src="./plugins/anime-master/anime.min.js"></script>
+	<script src="./plugins/anime-master/anime.js"></script>
+	<script src="./plugins/anime-master/documentation/assets/js/anime.2.1.0.js"></script>
+
+</body>
+
+</html>

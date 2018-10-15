@@ -33,54 +33,55 @@
 	}
 
 </Style>
-
 <head>
-
 	<title>Crear nuevo usuario</title>
-	<link href="./css/bootstrap.min.css" rel="stylesheet">
-	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="./plugins/anime-master/documentation/assets/css/anime.css" rel="stylesheet">
 	<link href="./plugins/anime-master/documentation/assets/css/anime-theme.css" rel="stylesheet">
 	<link href="./plugins/anime-master/documentation/assets/css/documentation.css" rel="stylesheet">
 
 </head>
 
-<body Style="background-color:#08090a">
-
+<body>
 	<div class="jumbotron text-center">
-	
-		<h1 Style="color:white">[Nombre de empresa]</h1><br>
+		<h1 Style="color:white">[Nombre de empresa]</h1>
+		<br>
 		<p Style="color:white">[Crear nuevo usuario]</p>
 
 	</div>
 
+
 	<div>
 
-		<form action="usr_create.php" method="post">
-				<div align="center">
-					<input type="text" placeholder = "Nombre" name = "name"><br><br>
-					<input type="password" placeholder = "Clave de acceso" name = "psw"><br><br>
-					<input type="text" placeholder = "Correo" name = "email"><br><br>
-					<select name = "job">
-					<option value="Admin">Administador</option>
-					<option value="Mang">Gerente</option>
-					<option value="Storage">Almacen</option>
-					</select><br><br>			
-					<button type="submit" value = "submit" style="height" >Crear
-				</div>
-		</form><br><br>
+	<form action="usr_create.php" method="post">
+		<div align="center">
+			<input type="text" placeholder = "Nombre" name = "name">
+			<br>
+			<br>
+			<input type="password" placeholder = "Clave de acceso" name = "psw">
+			<br>
+			<br>
+			<input type="text" placeholder = "Nivel" name = "nivel">
+			<br>
+			<br>
+			<button type="submit" value = "submit" style="height" >Crear
+		</div>
 		
-		<form action="Admin.html">
-			<div align = "center">
-				<button type="submit" value = "submit" style="height" >Cancelar
-			</div>
-		</form>
+	</form>
+
+		<br><br>
+	<form action="Admin.html">
+	<div align = "center">
+	<button type="submit" value = "submit" style="height" >Cancelar
+    </div>
+	</form>
 	
 	</div>
 
     <Script src="./plugins/jquery/jquery-3.2.1.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
-	<Script src="./js/bootstrap.min.js"></script>
+	<Script src="./plugins/bootstrap/js/bootstrap.min.js"></script>
 	<Script src="./js/Funciones.js"></script>
 	<script src="./plugins/anime-master/anime.min.js"></script>
 	<script src="./plugins/anime-master/anime.js"></script>

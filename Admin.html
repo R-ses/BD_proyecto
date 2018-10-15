@@ -35,73 +35,153 @@
 
 <head>
 	<title>Administrador</title>
-	
-	<link href="./css/bootstrap.min.css" rel="stylesheet">
-	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="./plugins/anime-master/documentation/assets/css/anime.css" rel="stylesheet">
 	<link href="./plugins/anime-master/documentation/assets/css/anime-theme.css" rel="stylesheet">
 	<link href="./plugins/anime-master/documentation/assets/css/documentation.css" rel="stylesheet">
 </head>
 
-<body Style="background-color:#08090a">
+<body>
 
 	<div class="jumbotron text-center">
-		<h1 Style="color:white">[ FrostByte ]</h1>
-		<div class="imgcontainer">
-			<img src = "usr_av.png" style="width:10%">
-		</div>
-		
-		
-	</div>	
+		<h1 Style="color:white">[Nombre de empresa]</h1><br>
+		<p Style="color:white">[Nivel 1: Administrador]</p>
+	</div>
+<div>
+
+</div>
+
+<div align="center" Style="color:white">
+
+Estado de lineas de produccion
+<br><br><br>
+</div>
 
 
-	<div class="container">
 
-		<div class="row">
+<div class="container">
 
-			<div class="col-md-2">
-
-				<div>
-					<form action="usr_create.html">
-						<button type="submit" value = "submit" style="height" >Nuevo Usuario
-					</form>
-				</div>
-
-				<br><br>
-				
-				<div>
-					<form action="Mang.html">
-						<button type="submit" value = "submit" style="height" >Management
-					</form>
-				</div>
-
-				<br><br>
-				
-				<div>
-					<form action="Storage.html">
-						<button type="submit" value = "submit" style="height" >Storage
-					</form>
-				</div>
-
-				<br><br>
-
-				<div>
-					<form action="index.html">
-						<button type="submit" value = "submit" style="height" >Cerrar Session
-					</form>
-				</div>
-
-			</div>
-
+  <div class="row">
+  
+    <div class="col-md-2">
+      
+		<div>
+			<form action="usr_create.html">
+			<button type="submit" value = "submit" style="height" >Nuevo Usuario
+			</form>
 		</div>
 
+			<br><br>
+			
+		<div>
+			<form action="index.html">
+			<button type="submit" value = "submit" style="height" >Cerrar Session
+			</form>
+		</div>
+		
+    </div>
+	
+	<div class="col-md-1">
 	</div>
 
+	<div class="col-sm-3">
+	<p>
+	Linea 1
+	</p>
+	<br><br>
+	
+	<h1>Color correcto: <a id="Data1"></a> </h1>
+	<h1>Color incorrecto: <a id="Data2"></a> </h1>
+	<h1>Sin deformidad: <a id="Data3"></a> </h1>
+	<h1>Con deformidad: <a id="Data4"></a> </h1>
+	<h1>Paquetes completos: <a >0</a></h1>
+	
+	</div>
+	
+	<div class="col-sm-3">
+	<p>
+	Linea 2
+	</p>
+	<br><br>
+	
+	<h1>Color correcto: <a id="Data5"></a> </h1>
+	<h1>Color incorrecto: <a id="Data6"></a> </h1>
+	<h1>Sin deformidad: <a id="Data7"></a> </h1>
+	<h1>Con deformidad: <a id="Data8"></a> </h1>
+	<h1>Paquetes completos: </h1>
+	
+	</div>
+	
+	<div class="col-sm-3">
+	<p>
+	Linea 3
+	</p>
+	<br><br>
+	
+	<h1>Color correcto: <a id="Data9"></a> </h1>
+	<h1>Color incorrecto: <a id="Data10"></a> </h1>
+	<h1>Sin deformidad: <a id="Data11"></a> </h1>
+	<h1>Con deformidad: <a id="Data12"></a> </h1>
+	<h1>Paquetes completos: </h1>
+	
+	</div>
+	
+  </div>
+  
+</div>
 
-   
-	<Script src="./js/bootstrap.min.js"></script>
+
+	
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+	
+	<script>
+		  // Initialize Firebase
+		  var config = {
+			apiKey: "AIzaSyBuWk5IXsJZMNt4dRlUtWNXV3AOhxaOynA",
+			authDomain: "ing-proc.firebaseapp.com",
+			databaseURL: "https://ing-proc.firebaseio.com",
+			projectId: "Ing-Proc",
+			storageBucket: "ing-proc.appspot.com",
+			messagingSenderId: "634402889050"
+		  };
+		  firebase.initializeApp(config);
+	</script>
+	
+
+
+	<script>
+
+		var Data1 = document.getElementById('Data1');
+		var dbRef1 = firebase.database().ref().child('color');
+		dbRef1.on('value', snap => Data1.innerText = snap.val());
+		
+		var Data2 = document.getElementById('Data2');
+		var dbRef2 = firebase.database().ref().child('dcolor');
+		dbRef2.on('value', snap => Data2.innerText = snap.val());
+		
+		var Data3 = document.getElementById('Data3');
+		var dbRef3 = firebase.database().ref().child('forma');
+		dbRef3.on('value', snap => Data3.innerText = snap.val());
+		
+		var Data4 = document.getElementById('Data4');
+		var dbRef4 = firebase.database().ref().child('dforma');
+		dbRef4.on('value', snap => Data4.innerText = snap.val());
+				
+	
+			
+	</script>
+
+
+    <Script src="./plugins/jquery/jquery-3.2.1.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+	<Script src="./plugins/bootstrap/js/bootstrap.min.js"></script>
 	<Script src="./js/Funciones.js"></script>
+	<script src="./plugins/anime-master/anime.min.js"></script>
+	<script src="./plugins/anime-master/anime.js"></script>
+	<script src="./plugins/anime-master/documentation/assets/js/anime.2.1.0.js"></script>
 
+	
 
 
 

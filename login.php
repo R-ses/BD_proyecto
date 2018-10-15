@@ -1,6 +1,6 @@
 <?php
 
-$link = mysqli_connect("localhost", "root", "", "cred");
+$link = mysqli_connect("localhost", "root", "", "basededatos");
 	if($link === false)
 	{
 		die("ERROR: Could not connect. " . mysqli_connect_error());
@@ -13,10 +13,10 @@ $link = mysqli_connect("localhost", "root", "", "cred");
 			$ID = $_POST['usr'];
 			$PS = $_POST['psw'];
 			//$pass = mysqli_real_escape_string($link,$_POST['psw']);
-			//var_dump($ID);
-			//var_dump($PS);
-	        $query = 'Select * From Users WHERE user = \''.$ID.'\' and pass = \''.$PS.'\'';
-			//var_dump($query);
+			var_dump($ID);
+			var_dump($PS);
+	        $query = 'Select * From usuarios WHERE nombre = \''.$ID.'\' and contrasena = \''.$PS.'\'';
+			var_dump($query);
 			
 			$res = mysqli_query($link,$query);
 			//var_dump($res);
@@ -25,16 +25,17 @@ $link = mysqli_connect("localhost", "root", "", "cred");
 			
 			
 			$count = mysqli_num_rows($res);
-			//var_dump($count);
+			var_dump($count);
 			
 			
 			if($count==true)
 				{
 				
-					$c_level = 'Select * From Users WHERE user =\''.$ID.'\'';
+					$c_level = 'Select * From usuarios WHERE nombre =\''.$ID.'\'';
 					$level = mysqli_query($link,$c_level);
 					$level_val = mysqli_fetch_array($level,MYSQLI_NUM);
 					
+					var_dump($level_val[3]);
 					
 					switch($level_val[3])
 						{
@@ -45,14 +46,6 @@ $link = mysqli_connect("localhost", "root", "", "cred");
 							case '2':
 								header("Location: Mang.html");
 								break;
-							case '3':
-								header("Location: Storage.html");
-								break;
-							case '4':
-								header("Location: Mang.html");
-								break;
-								
-								
 						}		
 				
 					
@@ -60,7 +53,7 @@ $link = mysqli_connect("localhost", "root", "", "cred");
 				else
 				{
 				
-				header("Location: index2.html");
+				header("Location: index.html");
 				
 				}
 		

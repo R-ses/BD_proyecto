@@ -1,6 +1,6 @@
 <?php
 
-$link = mysqli_connect("localhost", "root", "", "Cred");
+$link = mysqli_connect("localhost", "root", "", "login_credentials");
  
 // Check connection
 if($link === false)
@@ -10,42 +10,21 @@ if($link === false)
 
 	$nom =  $_POST['name'];
 	$ps = $_POST['psw'];
-	$lv = $_POST['job'];
-	$email = $_POST['email'];
-	$sqlemail = 'Select * From Users WHERE email =\''.$email.'\'';
-	$sc = mysqli_query($link,$sqlemail);	
-	$culo = mysqli_fetch_array($sc,MYSQLI_NUM);
-	
-	if($culo[2] === $email)
-	{
-		echo "Correo Existente";
-		header("Location:Admin.html");		
-	}	
-	else
-	{
+	$lv = $_POST['nivel'];
 
-	switch($lv)
-	{
-		case 'Admin':
-		$lv_s = 1;
-		break;
-		case 'Mang':
-		$lv_s = 2;
-		break;
-		case 'Storage':
-		$lv_s = 3;
-		break;
-		default:
-		$lv_s = 0;	
-	}
-	
-	$sql = "INSERT INTO Users (pass, user,level,email) VALUES ('$ps', '$nom','$lv_s','$email')";
-	if(mysqli_query($link, $sql))
-	{
-		echo "Datos ingresados satisfactoriamente.";
-		header("Location:Admin.html");
-	} 
+	$sql = "INSERT INTO usuarios (contrasena, nombre,nivel) VALUES ('$ps', '$nom','$lv')";
+
+	if(mysqli_query($link, $sql)){
+	echo "Datos ingresados satisfactoriamente.";
+	header("Location:Admin.html");
+	  
 } 
+
+else
+{
+    echo "ERROR: Ocurrio un error $sql. " . mysqli_error($link);
+}
+ 
 
 mysqli_close($link);
 ?>
